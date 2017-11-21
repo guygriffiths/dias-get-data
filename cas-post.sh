@@ -51,7 +51,7 @@ dos2unix $HEADER_DUMP_DEST > /dev/null
 CURL_DEST=`grep Location $HEADER_DUMP_DEST | sed 's/Location: //'`
 echo "Getting MOD_AUTH_CAS cookie from $CURL_DEST"
 echo
-curl -s -k -b $COOKIE_JAR -c $COOKIE_JAR "$CURL_DEST"
+curl -s -k -b $COOKIE_JAR -c $COOKIE_JAR "$CURL_DEST" -o /dev/null
 
 #If our destination is not a GET we'll need to do a GET to, say, the user dashboard here
 
